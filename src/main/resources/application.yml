@@ -1,0 +1,44 @@
+
+spring:
+  datasource:
+    url: ENC(2AXg3s3ujvMO+zi8FPFHDkeIQ+cXrJ7UoTz9cI4wE7iMsoNB/tYt70hj98z4ovm8)  #数据库的url
+    username: ENC(skrm+o+053ARJbUsRWQxvA==)
+    password: ENC(JaxdycFgT/eUXc8A41evOpX9rT+B4TMR)
+    type: com.alibaba.druid.pool.DruidDataSource
+#
+    initialSize: 5
+    minIdle: 1
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#
+    filters: stat,wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true  
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  servlet:
+    multipart:
+      enabled: true
+      resolve-lazily: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+  mail: #发送邮件
+    host: ENC(iPsN+GG1bbxJOG/Sm7/CGJcxCvXVUs8X)
+    username: ENC(y+mtTqO23VBl1aiYjCjBzzFw0FT6XGqaQlvBCCrTyoM=)
+    password: ENC(5NX+Bgb8oZzTeQJCKkaxMBx7RMGE6ZW5F2wUSc8kqw0=)
+    default-encoding: UTF-8
+    port: 465
+    properties:
+      mail:
+        debug: true
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+server:
+  port: 8081
